@@ -1,0 +1,188 @@
+/* Restrained constellation background accents */
+.page-hero,.section,.footer {
+  position:relative
+}
+.page-hero::before {
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:118px;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.52;
+  background-image:url("data:image/svg+xml,%3Csvg width='760' height='118' viewBox='0 0 760 118' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='1.15' stroke-opacity='.74'%3E%3Cpath d='M0 30 82 15 150 22 218 4 275 58 338 0 428 42 516 8 590 70 670 18 760 44'/%3E%3Cpath d='M82 15 122 86 150 22 218 4 208 74 275 58 286 14'/%3E%3Cpath d='M516 8 545 92 590 70 628 8 670 18 704 90'/%3E%3C/g%3E%3Cg fill='%23D4AF37' fill-opacity='.9'%3E%3Ccircle cx='82' cy='15' r='4'/%3E%3Ccircle cx='150' cy='22' r='4'/%3E%3Ccircle cx='218' cy='4' r='4'/%3E%3Ccircle cx='122' cy='86' r='4'/%3E%3Ccircle cx='208' cy='74' r='4'/%3E%3Ccircle cx='275' cy='58' r='4'/%3E%3Ccircle cx='428' cy='42' r='4'/%3E%3Ccircle cx='516' cy='8' r='4'/%3E%3Ccircle cx='590' cy='70' r='4'/%3E%3Ccircle cx='670' cy='18' r='4'/%3E%3Ccircle cx='704' cy='90' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat-x;
+  background-size:760px 118px;
+  background-position:top center;
+}
+.section:nth-of-type(odd)::after {
+  content:"";
+  position:absolute;
+  right:0;
+  top:7%;
+  width:190px;
+  height:360px;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.22;
+  background-image:url("data:image/svg+xml,%3Csvg width='190' height='360' viewBox='0 0 190 360' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='1.2' stroke-opacity='.78'%3E%3Cpath d='M190 105 70 32 74 130 24 118 74 130 88 240 190 185 88 240 160 284'/%3E%3Cpath d='M190 105 145 8 190 185 170 350'/%3E%3C/g%3E%3Cg fill='%23D4AF37' fill-opacity='.94'%3E%3Ccircle cx='70' cy='32' r='4'/%3E%3Ccircle cx='74' cy='130' r='4'/%3E%3Ccircle cx='24' cy='118' r='4'/%3E%3Ccircle cx='88' cy='240' r='4'/%3E%3Ccircle cx='145' cy='8' r='4'/%3E%3Ccircle cx='160' cy='284' r='4'/%3E%3Ccircle cx='170' cy='350' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:right center;
+}
+.section:nth-of-type(even)::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:128px;
+  height:128px;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.2;
+  background-image:url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='1.2' stroke-opacity='.82'%3E%3Cpath d='M0 0 48 54 14 118 48 54 128 44 88 72 48 54 0 54'/%3E%3C/g%3E%3Cg fill='%23D4AF37' fill-opacity='.94'%3E%3Ccircle cx='48' cy='54' r='4'/%3E%3Ccircle cx='14' cy='118' r='4'/%3E%3Ccircle cx='128' cy='44' r='4'/%3E%3Ccircle cx='88' cy='72' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:left top;
+}
+.footer::before {
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:70px;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.16;
+  background-image:url("data:image/svg+xml,%3Csvg width='760' height='118' viewBox='0 0 760 118' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='1.15' stroke-opacity='.74'%3E%3Cpath d='M0 30 82 15 150 22 218 4 275 58 338 0 428 42 516 8 590 70 670 18 760 44'/%3E%3C/g%3E%3Cg fill='%23D4AF37' fill-opacity='.9'%3E%3Ccircle cx='82' cy='15' r='4'/%3E%3Ccircle cx='150' cy='22' r='4'/%3E%3Ccircle cx='218' cy='4' r='4'/%3E%3Ccircle cx='275' cy='58' r='4'/%3E%3Ccircle cx='516' cy='8' r='4'/%3E%3Ccircle cx='590' cy='70' r='4'/%3E%3Ccircle cx='670' cy='18' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat-x;
+  background-size:760px 118px;
+  background-position:top center;
+}
+@media (max-width:760px) {
+  .page-hero::before {
+    height:82px;
+    background-size:530px 82px;
+    opacity:.32
+  }
+  .section:nth-of-type(odd)::after {
+    width:116px;
+    height:230px;
+    opacity:.12
+  }
+  .section:nth-of-type(even)::before {
+    width:86px;
+    height:86px;
+    opacity:.11
+  }
+}
+/* Normalize index hero text scale */
+.home-hero h1 {
+  font-size:clamp(2.45rem,5.4vw,4.65rem)
+}
+.home-hero p {
+  max-width:640px
+}
+@media (max-width:760px) {
+  .home-hero h1 {
+    font-size:clamp(2.2rem,11vw,3.35rem)
+  }
+}
+/* Navbar logo size adjustment */
+.nav .brand-mark {
+  width:55px;
+  height:55px
+}
+@media (max-width:760px) {
+  .nav .brand-mark {
+    width:50px;
+    height:50px
+  }
+}
+/* Align index hero left block with inner pages */
+@media (min-width:1081px) {
+  .home-hero .page-hero-grid > .reveal:first-child {
+    padding-top:clamp(2.2rem,4.8vh,4.1rem)
+  }
+}
+@media (max-width:1080px) {
+  .home-hero .page-hero-grid > .reveal:first-child {
+    padding-top:0
+  }
+}
+/* Match index hero left element to inner pages */
+.home-hero .page-hero-grid > .reveal:first-child {
+  padding-top:0!important
+}
+.home-hero h1 {
+  font-size:clamp(2.9rem,7.8vw,6.1rem)!important;
+  line-height:1.02
+}
+.home-hero p {
+  max-width:760px
+}
+@media (max-width:760px) {
+  .home-hero h1 {
+    font-size:clamp(2.45rem,14vw,4rem)!important
+  }
+}
+/* Refine index hero to match inner-page hero rhythm */
+@media (min-width:1081px) {
+  .home-hero .page-hero-grid > .reveal:first-child {
+    margin-top:-1.35rem!important
+  }
+  .home-hero h1 {
+    font-size:clamp(2.75rem,6.65vw,5.35rem)!important;
+    line-height:1.03
+  }
+}
+@media (max-width:1080px) {
+  .home-hero .page-hero-grid > .reveal:first-child {
+    margin-top:0!important
+  }
+}
+/* Correct index right hero visual and revert left-side experiment */
+.home-hero .page-hero-grid > .reveal:first-child {
+  padding-top:0!important;
+  margin-top:0!important
+}
+.home-hero h1 {
+  font-size:clamp(2.9rem,7.8vw,6.1rem)!important;
+  line-height:1.02
+}
+@media (min-width:1081px) {
+  .home-hero .hero-visual {
+    width:min(100%,455px)!important;
+    max-width:455px!important;
+    margin-top:-1.2rem;
+    transform:none!important
+  }
+}
+@media (max-width:1080px) {
+  .home-hero .hero-visual {
+    margin-top:0
+  }
+}
+/* Match index right hero visual exactly to inner pages */
+@media (min-width:1081px) {
+  .home-hero .hero-visual {
+    width:min(100%,500px)!important;
+    max-width:500px!important;
+    margin-top:0!important;
+    transform:none!important
+  }
+}
+/* Navbar brand font - OC Pájaro 2 */
+.brand-copy strong {
+  font-family:'Pajaro',Georgia,'Times New Roman',serif;
+  font-weight:400!important;
+  letter-spacing:.01em
+}
+.footer-brand .brand-copy strong {
+  font-family:'Pajaro',Georgia,'Times New Roman',serif;
+  font-weight:400!important
+}
+
