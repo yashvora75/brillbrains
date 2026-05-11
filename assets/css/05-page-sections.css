@@ -231,7 +231,7 @@
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  opacity:.07;
+  opacity:1;
   z-index:0;
   pointer-events:none
 }
