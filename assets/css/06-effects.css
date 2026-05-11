@@ -189,4 +189,466 @@
     transition:opacity .3s,transform .3s!important
   }
 }
+/* =================================================================
+   SPACING AND HERO ORBIT POLISH
+   Final layer to keep pages dense, balanced, and responsive.
+   ================================================================= */
+.page-hero {
+  min-height:clamp(540px,72vh,740px)!important;
+  padding:clamp(6.4rem,7vw,7.2rem) 0 clamp(2.6rem,4.2vw,3.6rem)!important
+}
+.home-hero {
+  min-height:clamp(620px,78vh,820px)!important
+}
+.contact-hero {
+  min-height:clamp(520px,68vh,680px)!important
+}
+.page-hero--centered {
+  min-height:clamp(430px,54vh,560px)!important;
+  padding:clamp(6.2rem,6.5vw,7rem) 0 clamp(2.2rem,3.5vw,3rem)!important
+}
+.about-page-hero {
+  min-height:clamp(560px,74vh,720px)!important
+}
+.page-hero-grid {
+  gap:clamp(2rem,3.4vw,3.4rem)!important
+}
+.section {
+  padding:clamp(3.2rem,5.8vw,5.6rem) 0!important
+}
+.section.tight {
+  padding:clamp(2.2rem,4.2vw,3.8rem) 0!important
+}
+.section + .section.tight,
+.section.tight + .section.tight {
+  padding-top:clamp(1.8rem,3.5vw,3.2rem)!important
+}
+.split {
+  gap:clamp(2rem,3.8vw,3.25rem)!important
+}
+.section-head {
+  margin-bottom:clamp(1.5rem,2.8vw,2.1rem)!important
+}
+.vision-card,
+.contact-cta-band,
+.partnership-card {
+  padding:clamp(1.8rem,3.5vw,2.8rem)!important
+}
+.service-pillar-grid,
+.card-grid,
+.process-grid,
+.contact-page-grid {
+  gap:clamp(.9rem,1.8vw,1.3rem)!important
+}
+.footer {
+  padding:clamp(2.8rem,4.5vw,3.6rem) 0 1.8rem!important
+}
 
+.home-hero .hero-visual {
+  width:min(100%,540px)!important;
+  max-width:540px!important;
+  overflow:visible
+}
+.home-hero .hero-logo {
+  width:37%;
+  transition:transform .45s var(--ease),filter .45s var(--ease)
+}
+.home-hero .hero-visual:hover .hero-logo {
+  transform:scale(1.05);
+  filter:drop-shadow(0 0 40px rgba(242,214,128,.48))
+}
+.hero-orbit-stats {
+  position:absolute;
+  inset:0;
+  z-index:4;
+  display:block!important;
+  max-width:none!important;
+  margin:0!important;
+  opacity:1!important;
+  animation:none!important;
+  pointer-events:none
+}
+.orbit-stat {
+  position:absolute;
+  min-width:132px;
+  padding:.72rem .82rem;
+  border:1px solid rgba(212,175,55,.24);
+  border-radius:8px;
+  background:linear-gradient(145deg,rgba(8,18,42,.86),rgba(21,35,64,.72));
+  box-shadow:0 16px 40px rgba(0,0,0,.22),0 0 22px rgba(212,175,55,.08);
+  text-align:center;
+  opacity:.78;
+  transform:translate(-50%,-50%) scale(.92);
+  transition:opacity .35s var(--ease),transform .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease);
+  backdrop-filter:blur(10px)
+}
+.orbit-stat strong {
+  display:block;
+  font-size:clamp(1.25rem,2.8vw,2rem);
+  line-height:1;
+  color:var(--gold-bright)
+}
+.orbit-stat span {
+  display:block;
+  margin-top:.28rem;
+  font-size:.62rem;
+  line-height:1.25;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--cream)
+}
+.orbit-stat--top {
+  left:50%;
+  top:7%
+}
+.orbit-stat--left {
+  left:13%;
+  top:70%
+}
+.orbit-stat--right {
+  left:87%;
+  top:70%
+}
+.home-hero .hero-visual:hover .orbit-stat,
+.home-hero .hero-visual:focus-within .orbit-stat {
+  opacity:1;
+  border-color:rgba(242,214,128,.52);
+  box-shadow:0 20px 52px rgba(0,0,0,.30),0 0 34px rgba(212,175,55,.20)
+}
+.home-hero .hero-visual:hover .orbit-stat--top,
+.home-hero .hero-visual:focus-within .orbit-stat--top {
+  transform:translate(-50%,-60%) scale(1)
+}
+.home-hero .hero-visual:hover .orbit-stat--left,
+.home-hero .hero-visual:focus-within .orbit-stat--left {
+  transform:translate(-62%,-50%) scale(1)
+}
+.home-hero .hero-visual:hover .orbit-stat--right,
+.home-hero .hero-visual:focus-within .orbit-stat--right {
+  transform:translate(-38%,-50%) scale(1)
+}
+.home-hero .hero-visual:hover .hero-ring.r1 {
+  animation-duration:34s
+}
+.home-hero .hero-visual:hover .hero-ring.r2 {
+  animation-duration:46s
+}
+.home-hero .hero-visual:hover .hero-ring.r3 {
+  animation-duration:28s
+}
+
+@media (min-width:1440px) {
+  .section {
+    padding:clamp(3.6rem,4.8vw,6rem) 0!important
+  }
+  .section.tight {
+    padding:clamp(2.3rem,3.6vw,4rem) 0!important
+  }
+}
+@media (max-width:1080px) {
+  .page-hero,
+  .home-hero,
+  .contact-hero,
+  .about-page-hero {
+    min-height:auto!important;
+    padding:6.8rem 0 3rem!important
+  }
+  .page-hero--centered {
+    min-height:auto!important;
+    padding:6.5rem 0 2.7rem!important
+  }
+  .home-hero .hero-visual {
+    width:min(100%,460px)!important;
+    max-width:460px!important;
+    margin-top:1rem!important
+  }
+  .orbit-stat {
+    min-width:118px;
+    padding:.62rem .72rem
+  }
+  .orbit-stat--top {
+    top:4%
+  }
+  .orbit-stat--left {
+    left:12%;
+    top:72%
+  }
+  .orbit-stat--right {
+    left:88%;
+    top:72%
+  }
+}
+@media (max-width:760px) {
+  .page-hero,
+  .home-hero,
+  .contact-hero,
+  .about-page-hero {
+    padding:6.1rem 0 2.5rem!important
+  }
+  .section {
+    padding:clamp(2.7rem,9vw,4.2rem) 0!important
+  }
+  .section.tight {
+    padding:clamp(1.9rem,7vw,3rem) 0!important
+  }
+  .home-hero .hero-visual {
+    width:min(100%,360px)!important;
+    max-width:360px!important;
+    margin-top:1.2rem!important
+  }
+  .home-hero .hero-logo {
+    width:35%
+  }
+  .orbit-stat {
+    min-width:96px;
+    padding:.5rem .55rem;
+    opacity:.95
+  }
+  .orbit-stat strong {
+    font-size:clamp(1.05rem,5vw,1.45rem)
+  }
+  .orbit-stat span {
+    font-size:.54rem;
+    letter-spacing:.07em
+  }
+}
+@media (max-width:520px) {
+  .home-hero .hero-visual {
+    width:min(100%,310px)!important;
+    max-width:310px!important
+  }
+  .orbit-stat {
+    min-width:84px;
+    max-width:96px;
+    padding:.45rem .46rem
+  }
+  .orbit-stat--top {
+    top:2%
+  }
+  .orbit-stat--left {
+    left:18%;
+    top:76%
+  }
+  .orbit-stat--right {
+    left:82%;
+    top:76%
+  }
+  .orbit-stat span {
+    font-size:.49rem
+  }
+}
+@media (max-width:375px) {
+  .home-hero .hero-visual {
+    width:min(100%,280px)!important;
+    max-width:280px!important
+  }
+  .orbit-stat {
+    min-width:78px;
+    max-width:88px
+  }
+  .orbit-stat strong {
+    font-size:1rem
+  }
+  .orbit-stat span {
+    font-size:.46rem
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .orbit-stat,
+  .home-hero .hero-logo {
+    transition:none!important
+  }
+}
+/* =================================================================
+   TRUE ORBITING HERO STATS
+   Three dots travel on the rings with readable stat cards attached.
+   ================================================================= */
+.home-hero .hero-ring > .dot {
+  display:none
+}
+.hero-orbit-stats {
+  overflow:visible
+}
+.orbit-path {
+  --orbit-duration:34s;
+  --orbit-start:0deg;
+  --orbit-counter:0deg;
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  transform-origin:50% 50%;
+  animation:orbitPathSpin var(--orbit-duration) linear infinite;
+  pointer-events:none;
+  z-index:5
+}
+.orbit-path--years {
+  inset:18%;
+  --orbit-duration:44s;
+  --orbit-start:0deg;
+  --orbit-counter:0deg
+}
+.orbit-path--core {
+  inset:0;
+  --orbit-duration:44s;
+  --orbit-start:240deg;
+  --orbit-counter:-240deg
+}
+.orbit-path--brands {
+  inset:8%;
+  --orbit-duration:44s;
+  --orbit-start:120deg;
+  --orbit-counter:-120deg
+}
+.orbit-node {
+  position:absolute;
+  left:50%;
+  top:0;
+  width:0;
+  height:0;
+  transform:translate(-50%,-50%);
+  overflow:visible
+}
+.orbit-dot {
+  position:absolute;
+  left:0;
+  top:0;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:var(--gold-bright);
+  box-shadow:0 0 18px rgba(242,214,128,.95),0 0 34px rgba(212,175,55,.36);
+  transform:translate(-50%,-50%);
+  z-index:2
+}
+.orbit-card-shell {
+  position:absolute;
+  left:0;
+  top:0;
+  transform:translate(-50%,calc(-100% - .9rem));
+  transform-origin:center calc(100% + .9rem);
+  z-index:1
+}
+.orbit-path--core .orbit-card-shell,
+.orbit-path--brands .orbit-card-shell {
+  transform:translate(-50%,calc(-100% - .75rem))
+}
+.orbit-path .orbit-stat {
+  position:static!important;
+  min-width:128px;
+  max-width:150px;
+  opacity:.92;
+  animation:orbitCardCounter var(--orbit-duration) linear infinite;
+  transition:opacity .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease)
+}
+.orbit-path--core .orbit-stat,
+.orbit-path--brands .orbit-stat {
+  min-width:116px;
+  max-width:138px
+}
+.home-hero .hero-visual:hover .orbit-path {
+  animation-play-state:paused
+}
+.home-hero .hero-visual:hover .orbit-path .orbit-stat {
+  animation-play-state:paused;
+  opacity:1;
+  border-color:rgba(242,214,128,.58);
+  background:linear-gradient(145deg,rgba(11,24,52,.92),rgba(29,45,82,.82));
+  box-shadow:0 20px 52px rgba(0,0,0,.32),0 0 34px rgba(212,175,55,.24)
+}
+.home-hero .hero-visual:hover .orbit-dot {
+  box-shadow:0 0 24px rgba(242,214,128,1),0 0 46px rgba(212,175,55,.55)
+}
+@keyframes orbitPathSpin {
+  from {
+    transform:rotate(var(--orbit-start))
+  }
+  to {
+    transform:rotate(calc(var(--orbit-start) + 360deg))
+  }
+}
+@keyframes orbitCardCounter {
+  from {
+    transform:rotate(var(--orbit-counter))
+  }
+  to {
+    transform:rotate(calc(var(--orbit-counter) - 360deg))
+  }
+}
+@media (max-width:1080px) {
+  .orbit-path--core {
+    inset:4%
+  }
+  .orbit-path--brands {
+    inset:11%
+  }
+}
+@media (max-width:760px) {
+  .orbit-dot {
+    width:10px;
+    height:10px
+  }
+  .orbit-path .orbit-stat {
+    min-width:94px;
+    max-width:104px;
+    padding:.5rem .48rem
+  }
+  .orbit-path--core .orbit-stat,
+  .orbit-path--brands .orbit-stat {
+    min-width:88px;
+    max-width:98px
+  }
+}
+@media (max-width:520px) {
+  .orbit-path--years {
+    inset:20%
+  }
+  .orbit-path--core {
+    inset:11%
+  }
+  .orbit-path--brands {
+    inset:17%
+  }
+  .orbit-path .orbit-stat {
+    min-width:76px;
+    max-width:86px;
+    padding:.4rem .38rem
+  }
+  .orbit-path .orbit-stat strong {
+    font-size:.96rem
+  }
+  .orbit-path .orbit-stat span {
+    font-size:.44rem;
+    letter-spacing:.045em
+  }
+  .orbit-card-shell {
+    transform:translate(-50%,calc(-100% - .55rem))
+  }
+  .orbit-path--core .orbit-card-shell,
+  .orbit-path--brands .orbit-card-shell {
+    transform:translate(-50%,calc(-100% - .5rem))
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .orbit-path,
+  .orbit-path .orbit-stat {
+    animation:none!important
+  }
+  .orbit-path--years {
+    transform:rotate(0deg)
+  }
+  .orbit-path--core {
+    transform:rotate(240deg)
+  }
+  .orbit-path--brands {
+    transform:rotate(120deg)
+  }
+  .orbit-path--years .orbit-stat {
+    transform:rotate(0deg)!important
+  }
+  .orbit-path--core .orbit-stat {
+    transform:rotate(-240deg)!important
+  }
+  .orbit-path--brands .orbit-stat {
+    transform:rotate(-120deg)!important
+  }
+}

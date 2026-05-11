@@ -209,7 +209,7 @@ const doc = new Document({
       sectionLabel("About Split Section"),
       sectionHeading("Business growth consulting for Jewellery businesses"),
       body("Eyebrow: About"),
-      lead("We serve retail jewellers and wholesalers worldwide as management and brand consultants, with deep specialization in operational documentation, systems, processes, technology, and people development."),
+      lead("We serve retail jewellers, wholesalers and manufacturers worldwide as management and brand consultants, with deep specialization in operational documentation, systems, processes, technology, and people development."),
       body("BrillBrains also has a division for customized and professional business training programs to boost organizational efficiency and productivity."),
       statRow([["2011", "Established"], ["SMEs", "Focus"], ["Global", "Retail & Wholesale"]]),
 
@@ -222,7 +222,7 @@ const doc = new Document({
       subHeading("02", "Business Management Consulting"),
       bullet("Business management mastery"), bullet("Process documentation"), bullet("Streamlining"), bullet("Systems"), bullet("Work profiles"), bullet("Tracking"), bullet("Empowered teams"), bullet("Autopilot business"), bullet("Expansion strategy"),
       subHeading("03", "Tech Consulting"),
-      bullet("Digital transformation"), bullet("Cloud solutions"), bullet("CRM and ERP setup"), bullet("Automation"), bullet("Analytics"), bullet("Cybersecurity"), bullet("IT infrastructure"), bullet("Custom software"), bullet("The Web Spiders"),
+      bullet("Digital transformation"), bullet("Cloud solutions"), bullet("CRM and ERP setup"), bullet("Automation"), bullet("Analytics"), bullet("Cybersecurity"), bullet("IT infrastructure"), bullet("Custom software"), bullet("The Web Solutions"),
       subHeading("04", "Training Programs"),
       bullet("Management training"), bullet("Jewellery Graduate"), bullet("Culture transformation"), bullet("Team building"), bullet("Marketing mastery"), bullet("Digital Shakti"), bullet("Leadership"), bullet("Tours & exhibitions"),
 
@@ -283,7 +283,7 @@ const doc = new Document({
       sectionHeading("Focused on the Jewellery industry"),
       body("Eyebrow: Who We Are"),
       lead("BrillBrains is a Business Growth Consultant firm dedicated to the Jewellery Industry."),
-      body("We serve retail jewellers and wholesalers worldwide as management and brand consultants, explicitly specializing in operational documentation, systems, and processes to help SMEs achieve operational excellence."),
+      body("We serve retail jewellers, wholesalers and manufacturers worldwide as management and brand consultants, explicitly specializing in operational documentation, systems, and processes to help SMEs achieve operational excellence."),
       body("Our training division creates customized and professional business training programs to boost the efficiency and productivity of the overall organization."),
 
       sectionLabel("Four Pillars Cards"),
@@ -316,7 +316,7 @@ const doc = new Document({
       sectionLabel("Client Profile Split Section"),
       sectionHeading("Built for ambitious Jewellery businesses"),
       body("Eyebrow: Client Profile"),
-      lead("Our client work is centered on retail jewellers and wholesalers worldwide."),
+      lead("Our client work is centered on retail jewellers, wholesalers and manufacturers worldwide."),
       body("We support businesses that want to move from owner-dependent execution to documented, process-driven, team-powered operations. Engagements often include brand repositioning, process documentation, department setup, performance tracking, technology adoption, and training."),
 
       sectionLabel("Client Logo Carousel"),
@@ -355,7 +355,7 @@ const doc = new Document({
       subHeading("02", "Business Management Consulting"),
       bullet("Business management mastery"), bullet("Process documentation"), bullet("Streamlining"), bullet("Systems"), bullet("Work profiles"), bullet("Tracking"), bullet("Empowered teams"), bullet("Autopilot business"), bullet("Expansion strategy"),
       subHeading("03", "Tech Consulting"),
-      bullet("Digital transformation"), bullet("Cloud solutions"), bullet("CRM and ERP setup"), bullet("Automation"), bullet("Analytics"), bullet("Cybersecurity"), bullet("IT infrastructure"), bullet("Custom software"), bullet("The Web Spiders"),
+      bullet("Digital transformation"), bullet("Cloud solutions"), bullet("CRM and ERP setup"), bullet("Automation"), bullet("Analytics"), bullet("Cybersecurity"), bullet("IT infrastructure"), bullet("Custom software"), bullet("The Web Solutions"),
       subHeading("04", "Training Programs"),
       bullet("Management training"), bullet("Jewellery Graduate"), bullet("Culture transformation"), bullet("Team building"), bullet("Marketing mastery"), bullet("Orientation"), bullet("Digital Shakti"), bullet("Leadership"), bullet("Tours"), bullet("Exhibitions"),
       divider(),
@@ -448,7 +448,7 @@ const doc = new Document({
       bullet("Network"), bullet("Devices"), bullet("Software stack"), bullet("Support planning"), bullet("Reliable technology foundations"),
       subHeading("08", "Custom Software"),
       bullet("Tailored web solutions"), bullet("Internal tools"), bullet("Integrations"), bullet("Applications for your operating model"),
-      subHeading("09", "The Web Spiders"),
+      subHeading("09", "The Web Solutions"),
       bullet("Domain name"), bullet("Web hosting"), bullet("Website designing"), bullet("Website development"),
       divider(),
 
@@ -558,7 +558,7 @@ const doc = new Document({
       sectionHeading("Don't see a perfect fit? Reach out anyway"),
       body("Eyebrow: Get in Touch"),
       body("Body: We're always open to meeting talented people. Send us your portfolio or CV and tell us how you'd contribute to the BrillBrains mission."),
-      body("Button 1: Send Your CV  →  hello@brillbrainsconsultants.com"),
+      body("Button 1: Send Your CV  →  connect@brillbrainsconsultants.com"),
       body("Button 2: WhatsApp Us  →  +91 73041 92092"),
       divider(),
 
@@ -573,7 +573,7 @@ const doc = new Document({
       body("Eyebrow: Contact Us"),
       body("Body: Reach out to start a conversation about your Jewellery brand, operations, systems, technology, or team development. We respond within one business day."),
       body("Button 1: WhatsApp Us  →  +91 73041 92092"),
-      body("Button 2: Send Email  →  hello@brillbrainsconsultants.com"),
+      body("Button 2: Send Email  →  connect@brillbrainsconsultants.com"),
 
       sectionLabel("Contact Tiles"),
       new Paragraph({
@@ -592,7 +592,7 @@ const doc = new Document({
         children: [new TextRun({ text: "Tile 3 — Email", bold: true, size: 22, color: NAVY, font: "Calibri" })],
         spacing: { before: 160, after: 60 }
       }),
-      bullet("hello@brillbrainsconsultants.com"),
+      bullet("connect@brillbrainsconsultants.com"),
       bullet("Share your requirements, business goals, and preferred callback time."),
 
       sectionLabel("FAQ Section — 8 Questions & Answers"),
@@ -611,11 +611,11 @@ const doc = new Document({
       ),
       ...qaItem(
         "Do you serve Jewellery businesses outside India?",
-        "Yes. BrillBrains serves Jewellery businesses worldwide — retail jewellers and wholesalers across India and internationally. Our consulting, brand, and training programs are designed with the global Jewellery industry in mind, and we work with clients remotely as well as on-site."
+        "Yes. BrillBrains serves Jewellery businesses worldwide — retail jewellers, wholesalers and manufacturers across India and internationally. Our consulting, brand, and training programs are designed with the global Jewellery industry in mind, and we work with clients remotely as well as on-site."
       ),
       ...qaItem(
         "What is included in your Brand Consulting service?",
-        "Brand Consulting at BrillBrains covers the full spectrum: brand audit, strategy, positioning, voice, identity, and brand guidelines; creative services including logo, social media creatives, print media, and outdoor advertising; content creation including videos, reels, presentations, newsletters, and website copy; digital marketing (SEO, SEM, PPC, Google Ads, WhatsApp marketing, social media management); marketing strategy and campaign planning; video marketing; and The Web Spiders service for domain, hosting, and complete website design and development."
+        "Brand Consulting at BrillBrains covers the full spectrum: brand audit, strategy, positioning, voice, identity, and brand guidelines; creative services including logo, social media creatives, print media, and outdoor advertising; content creation including videos, reels, presentations, newsletters, and website copy; digital marketing (SEO, SEM, PPC, Google Ads, WhatsApp marketing, social media management); marketing strategy and campaign planning; video marketing; and The Web Solutions service for domain, hosting, and complete website design and development."
       ),
       ...qaItem(
         "What training programs are available for Jewellery teams?",
@@ -627,7 +627,7 @@ const doc = new Document({
       ),
       ...qaItem(
         "How do I get started with BrillBrains?",
-        "Getting started is simple — reach out via WhatsApp at +91 73041 92092, call us directly at +91 73047 92092, or email hello@brillbrainsconsultants.com. We respond within one business day. Share your requirements, business goals, and a preferred callback time and we will take it from there."
+        "Getting started is simple — reach out via WhatsApp at +91 73041 92092, call us directly at +91 73047 92092, or email connect@brillbrainsconsultants.com. We respond within one business day. Share your requirements, business goals, and a preferred callback time and we will take it from there."
       ),
 
       sectionLabel("Google Map Section"),
@@ -665,7 +665,7 @@ const doc = new Document({
       sectionLabel("Connect Column"),
       bullet("+91 73041 92092"),
       bullet("+91 73047 92092"),
-      bullet("hello@brillbrainsconsultants.com"),
+      bullet("connect@brillbrainsconsultants.com"),
 
       sectionLabel("Social Media Icons"),
       bullet("Instagram"),

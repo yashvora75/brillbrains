@@ -1,0 +1,148 @@
+﻿/* Archived client page CSS moved from assets/css/05-page-sections.css. */
+/* ================================================================
+   CLIENT LOGO GRID (index.html static section)
+   ================================================================ */
+.client-logo-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+  margin-top:2.8rem
+}
+.client-logo-item {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.8rem 1.4rem;
+  border:1px solid var(--line-strong);
+  border-radius:10px;
+  background:linear-gradient(135deg,rgba(21,35,64,.6),rgba(8,18,42,.5));
+  transition:border-color .3s var(--ease),background .3s var(--ease),transform .3s var(--ease);
+  min-height:110px
+}
+.client-logo-item:hover {
+  border-color:rgba(212,175,55,.35);
+  background:linear-gradient(135deg,rgba(21,35,64,.8),rgba(8,18,42,.7));
+  transform:translateY(-3px)
+}
+.client-logo-item img {
+  max-width:100%;
+  max-height:60px;
+  object-fit:contain;
+  filter:brightness(0) invert(1) opacity(.65);
+  transition:filter .3s var(--ease),opacity .3s var(--ease)
+}
+.client-logo-item:hover img {
+  filter:brightness(0) invert(1) opacity(.9)
+}
+.client-logo-placeholder {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.5rem;
+  width:100%
+}
+.client-logo-placeholder span {
+  font-family:var(--font-display);
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--gold-bright);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.55
+}
+.client-logo-placeholder-icon {
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px dashed rgba(212,175,55,.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(212,175,55,.3);
+  font-size:1.2rem
+}
+@media(max-width:900px) {
+  .client-logo-grid {
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+@media(max-width:480px) {
+  .client-logo-grid {
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem
+  }
+  .client-logo-item {
+    min-height:88px;
+    padding:1.2rem 1rem
+  }
+}
+
+/* ================================================================
+   CLIENT LOGO CAROUSEL (clients.html auto-scroller)
+   ================================================================ */
+.client-carousel {
+  overflow:hidden;
+  border-block:1px solid var(--line);
+  background:rgba(8,18,42,.46);
+  padding:2rem 0;
+  margin-block:clamp(3rem,6vw,5rem)
+}
+.client-carousel-track {
+  display:flex;
+  gap:2rem;
+  width:max-content;
+  animation:clientScroll 28s linear infinite
+}
+.client-carousel:hover .client-carousel-track {
+  animation-play-state:paused
+}
+.client-carousel-logo {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:260px;
+  height:110px;
+  border:1px solid var(--line-strong);
+  border-radius:10px;
+  background:linear-gradient(135deg,rgba(21,35,64,.55),rgba(8,18,42,.45));
+  padding:0 2rem;
+  flex-shrink:0;
+  transition:border-color .3s var(--ease),background .3s var(--ease)
+}
+.client-carousel-logo:hover {
+  border-color:rgba(212,175,55,.35);
+  background:linear-gradient(135deg,rgba(21,35,64,.8),rgba(8,18,42,.7))
+}
+.client-carousel-logo img {
+  max-width:180px;
+  max-height:64px;
+  object-fit:contain;
+  filter:brightness(0) invert(1) opacity(.6);
+  transition:filter .3s var(--ease)
+}
+.client-carousel-logo:hover img {
+  filter:brightness(0) invert(1) opacity(.9)
+}
+.client-carousel-logo-placeholder {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.4rem;
+  width:100%
+}
+.client-carousel-logo-placeholder strong {
+  font-family:var(--font-display);
+  font-size:.88rem;
+  font-weight:800;
+  color:var(--gold-bright);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.55;
+  white-space:nowrap
+}
+@keyframes clientScroll {
+  0%   { transform:translateX(0) }
+  100% { transform:translateX(-50%) }
+}
+
