@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\yashv\\\\OneDrive\\\\Desktop\\\\Brill Brains\\\\website\" -Recurse -Force | Select-Object FullName | ForEach-Object { $_.FullName } | Sort-Object)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\yashv\\\\OneDrive\\\\Desktop\\\\Brill Brains\\\\website\\\\assets\\\\images\" -Recurse)",
+      "Bash(Select-Object FullName, Name)"
+    ]
+  }
+}

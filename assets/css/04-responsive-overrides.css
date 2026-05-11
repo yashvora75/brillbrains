@@ -1,4 +1,10 @@
-/* Restrained constellation background accents */
+/* ================================================================
+   RESPONSIVE OVERRIDES — BrillBrains
+   Comprehensive breakpoint system
+   Widths: 1440 | 1080 | 960 | 760 | 580 | 480 | 375 | 320
+   ================================================================ */
+
+/* ── Constellation background accents ── */
 .page-hero,.section,.footer {
   position:relative
 }
@@ -62,127 +68,777 @@
   background-size:760px 118px;
   background-position:top center;
 }
-@media (max-width:760px) {
-  .page-hero::before {
-    height:82px;
-    background-size:530px 82px;
-    opacity:.32
-  }
-  .section:nth-of-type(odd)::after {
-    width:116px;
-    height:230px;
-    opacity:.12
-  }
-  .section:nth-of-type(even)::before {
-    width:86px;
-    height:86px;
-    opacity:.11
-  }
-}
-/* Normalize index hero text scale */
-.home-hero h1 {
-  font-size:clamp(2.45rem,5.4vw,4.65rem)
-}
-.home-hero p {
-  max-width:640px
-}
-@media (max-width:760px) {
-  .home-hero h1 {
-    font-size:clamp(2.2rem,11vw,3.35rem)
-  }
-}
-/* Navbar logo size adjustment */
+
+/* ── Navbar brand logo ── */
 .nav .brand-mark {
   width:55px;
   height:55px
 }
-@media (max-width:760px) {
-  .nav .brand-mark {
-    width:50px;
-    height:50px
-  }
+
+/* ── Navbar brand font ── */
+.brand-copy strong {
+  font-family:'Montserrat',system-ui,sans-serif;
+  font-weight:800!important;
+  letter-spacing:-.01em
 }
-/* Align index hero left block with inner pages */
-@media (min-width:1081px) {
-  .home-hero .page-hero-grid > .reveal:first-child {
-    padding-top:clamp(2.2rem,4.8vh,4.1rem)
-  }
+.footer-brand .brand-copy strong {
+  font-family:'Montserrat',system-ui,sans-serif;
+  font-weight:800!important;
+  letter-spacing:-.01em
 }
-@media (max-width:1080px) {
-  .home-hero .page-hero-grid > .reveal:first-child {
-    padding-top:0
-  }
-}
-/* Match index hero left element to inner pages */
-.home-hero .page-hero-grid > .reveal:first-child {
-  padding-top:0!important
-}
+
+/* ── Home hero: consolidated h1 sizing ── */
 .home-hero h1 {
-  font-size:clamp(2.9rem,7.8vw,6.1rem)!important;
-  line-height:1.02
+  font-size:clamp(2.75rem,6.5vw,5.4rem)!important;
+  line-height:1.03
 }
 .home-hero p {
   max-width:760px
 }
-@media (max-width:760px) {
-  .home-hero h1 {
-    font-size:clamp(2.45rem,14vw,4rem)!important
-  }
-}
-/* Refine index hero to match inner-page hero rhythm */
+
+/* ── Home hero visual: desktop ── */
 @media (min-width:1081px) {
-  .home-hero .page-hero-grid > .reveal:first-child {
-    margin-top:-1.35rem!important
-  }
-  .home-hero h1 {
-    font-size:clamp(2.75rem,6.65vw,5.35rem)!important;
-    line-height:1.03
+  .home-hero .hero-visual {
+    width:min(100%,480px)!important;
+    max-width:480px!important;
+    margin-top:-3rem!important;
+    transform:none!important
   }
 }
 @media (max-width:1080px) {
-  .home-hero .page-hero-grid > .reveal:first-child {
+  .home-hero .hero-visual {
+    width:min(100%,320px)!important;
+    max-width:320px!important;
     margin-top:0!important
   }
 }
-/* Correct index right hero visual and revert left-side experiment */
-.home-hero .page-hero-grid > .reveal:first-child {
-  padding-top:0!important;
-  margin-top:0!important
-}
-.home-hero h1 {
-  font-size:clamp(2.9rem,7.8vw,6.1rem)!important;
-  line-height:1.02
-}
-@media (min-width:1081px) {
-  .home-hero .hero-visual {
-    width:min(100%,455px)!important;
-    max-width:455px!important;
-    margin-top:-1.2rem;
-    transform:none!important
-  }
-}
-@media (max-width:1080px) {
-  .home-hero .hero-visual {
-    margin-top:0
-  }
-}
-/* Match index right hero visual exactly to inner pages */
-@media (min-width:1081px) {
-  .home-hero .hero-visual {
-    width:min(100%,500px)!important;
-    max-width:500px!important;
-    margin-top:0!important;
-    transform:none!important
-  }
-}
-/* Navbar brand font - OC Pájaro 2 */
-.brand-copy strong {
-  font-family:'Pajaro',Georgia,'Times New Roman',serif;
-  font-weight:400!important;
-  letter-spacing:.01em
-}
-.footer-brand .brand-copy strong {
-  font-family:'Pajaro',Georgia,'Times New Roman',serif;
-  font-weight:400!important
+
+/* ── Hero stats: always 3-column layout ── */
+/* Override the 1-col fallback in 03-home-sections at 760px */
+.hero-stats {
+  grid-template-columns:repeat(3,minmax(0,1fr))!important
 }
 
+
+/* ================================================================
+   LARGE DESKTOP — 1440px+
+   ================================================================ */
+@media (min-width:1440px) {
+  .container {
+    width:min(1320px,90%)
+  }
+  .section {
+    padding:clamp(5rem,8vw,9rem) 0
+  }
+}
+
+
+/* ================================================================
+   WIDE DESKTOP — 1280px
+   ================================================================ */
+@media (max-width:1280px) {
+  /* Ensure hero columns don't get too unbalanced on mid-large screens */
+  .page-hero-grid {
+    gap:clamp(2.5rem,4vw,4rem)
+  }
+}
+
+
+/* ================================================================
+   TABLET — 1080px
+   (Foundation + home-sections handle most grid collapses here.
+    Override / add missing pieces below.)
+   ================================================================ */
+@media (max-width:1080px) {
+  /* Constellation scale-down */
+  .page-hero::before {
+    height:90px;
+    background-size:600px 90px;
+    opacity:.38
+  }
+  .section:nth-of-type(odd)::after {
+    width:130px;
+    height:260px;
+    opacity:.14
+  }
+  .section:nth-of-type(even)::before {
+    width:96px;
+    height:96px;
+    opacity:.13
+  }
+
+  /* Nav logo */
+  .nav .brand-mark {
+    width:50px;
+    height:50px
+  }
+
+  /* Home hero h1 */
+  .home-hero h1 {
+    font-size:clamp(2.55rem,7.2vw,4.6rem)!important
+  }
+
+  /* Home hero left block */
+  .home-hero .page-hero-grid > .reveal:first-child {
+    padding-top:0!important;
+    margin-top:0!important
+  }
+
+  /* Centered hero: slightly shorter */
+  .page-hero--centered {
+    min-height:55vh;
+    padding:7.5rem 0 3.5rem
+  }
+  .page-hero-center-wrap h1 {
+    font-size:clamp(2.3rem,5.2vw,4rem)
+  }
+
+  /* Reduce hero stats gap */
+  .hero-stats {
+    gap:clamp(1rem,2.5vw,2rem)
+  }
+
+  /* Values grid: 2-col already handled in 03, ensure ok */
+
+  /* Footer: 2-col already in 01-foundation */
+}
+
+
+/* ================================================================
+   INTERMEDIATE — 960px
+   New breakpoint for medium tablets / landscape phones
+   ================================================================ */
+@media (max-width:960px) {
+  /* Reduce section spacing slightly */
+  .section {
+    padding:clamp(3.8rem,8vw,6.5rem) 0
+  }
+
+  /* Centered hero adjustments */
+  .page-hero--centered {
+    min-height:48vh;
+    padding:7rem 0 3rem
+  }
+  .page-hero-center-wrap h1 {
+    font-size:clamp(2.15rem,5vw,3.6rem)
+  }
+  .page-hero-center-wrap p {
+    font-size:clamp(.95rem,1.8vw,1.1rem)
+  }
+
+  /* Process grid gap */
+  .process-grid {
+    gap:1rem
+  }
+
+  /* Training wrap: already 1-col at 1080px; adjust spacing */
+  .training-wrap {
+    gap:2.5rem
+  }
+
+  /* Reduce lead font a touch */
+  .lead {
+    font-size:clamp(1.15rem,2.2vw,1.5rem)
+  }
+
+  /* Hero stats compact */
+  .hero-stats {
+    gap:clamp(.9rem,2vw,1.8rem)
+  }
+}
+
+
+/* ================================================================
+   MOBILE — 760px
+   (01-foundation handles: nav, mobile menu, service-pillar-grid→1fr,
+    card-grid→1fr, stats-row→1fr, footer-grid→1fr)
+   We restore/override a few of those for better UX below.
+   ================================================================ */
+@media (max-width:760px) {
+  /* Constellation: smaller, less visible */
+  .page-hero::before {
+    height:62px;
+    background-size:420px 62px;
+    opacity:.24
+  }
+  .section:nth-of-type(odd)::after {
+    width:90px;
+    height:180px;
+    opacity:.09
+  }
+  .section:nth-of-type(even)::before {
+    width:70px;
+    height:70px;
+    opacity:.08
+  }
+
+  /* Nav logo */
+  .nav .brand-mark {
+    width:44px;
+    height:44px
+  }
+
+  /* Home hero h1 */
+  .home-hero h1 {
+    font-size:clamp(2.3rem,11.5vw,3.5rem)!important
+  }
+
+  /* Centered hero: compact on mobile */
+  .page-hero--centered {
+    min-height:auto;
+    padding:6.8rem 0 2.8rem
+  }
+  .page-hero-center-wrap h1 {
+    font-size:clamp(1.95rem,10vw,3rem)
+  }
+  .page-hero-center-wrap {
+    max-width:100%
+  }
+  .page-hero-center-wrap p {
+    font-size:.97rem;
+    max-width:100%
+  }
+
+  /* Hero stats: restore 3-col on mobile, with compact gaps */
+  .hero-stats {
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:clamp(.6rem,3vw,1.2rem);
+    max-width:100%
+  }
+  .stat strong {
+    font-size:clamp(1.5rem,5.5vw,2rem)
+  }
+  .stat span {
+    font-size:.7rem;
+    letter-spacing:.1em
+  }
+
+  /* Stats row: restore 3-col */
+  .stats-row {
+    grid-template-columns:repeat(3,1fr)!important
+  }
+
+  /* Service-pillar and card grids: restore 2-col at 760px
+     (01-foundation sets them to 1-col; we override to 2-col
+      and drop to 1-col at 580px below) */
+  .service-pillar-grid,
+  .card-grid {
+    grid-template-columns:repeat(2,1fr)!important
+  }
+  .service-pillar {
+    min-height:auto
+  }
+  .info-card {
+    min-height:0
+  }
+
+  /* Footer: 2-col at 760px (01-foundation sets 1fr; override) */
+  .footer-grid {
+    grid-template-columns:1fr 1fr!important;
+    gap:2rem
+  }
+  .footer p {
+    max-width:100%
+  }
+
+  /* Process grid: 2-col with tighter gap */
+  .process-grid {
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:1.2rem
+  }
+  .process-grid::before {
+    display:none
+  }
+
+  /* Values grid: 2-col */
+  .values-grid {
+    grid-template-columns:repeat(2,1fr)!important
+  }
+
+  /* Contact page grid: 2-col */
+  .contact-page-grid {
+    grid-template-columns:repeat(2,1fr)!important
+  }
+
+  /* Training list: 2-col */
+  .training-list {
+    grid-template-columns:1fr 1fr!important
+  }
+
+  /* Eyebrow scale */
+  .eyebrow {
+    font-size:.72rem;
+    letter-spacing:.2em
+  }
+
+  /* Section head margin */
+  .section-head {
+    margin-bottom:1.8rem
+  }
+
+  /* Reduce split gap */
+  .split {
+    gap:2rem
+  }
+
+  /* Lead font */
+  .lead {
+    font-size:clamp(1.1rem,3vw,1.4rem)
+  }
+
+  /* Hero actions: column stack with reasonable width */
+  .hero-actions {
+    flex-direction:column;
+    align-items:flex-start
+  }
+  .hero-actions .btn {
+    width:100%;
+    max-width:360px
+  }
+
+  /* Founder photo */
+  .founder-photo {
+    max-width:380px
+  }
+
+  /* Marquee size */
+  .marquee span {
+    font-size:1.05rem
+  }
+}
+
+
+/* ================================================================
+   SMALL TABLET / LARGE PHONE — 580px
+   Key step: collapse multi-col grids that need more space
+   ================================================================ */
+@media (max-width:580px) {
+  /* Service pillars and info cards: 1-col */
+  .service-pillar-grid,
+  .card-grid {
+    grid-template-columns:1fr!important
+  }
+
+  /* Split layout: single column */
+  .split {
+    grid-template-columns:1fr!important;
+    gap:2rem
+  }
+
+  /* Footer: 1-col */
+  .footer-grid {
+    grid-template-columns:1fr!important;
+    gap:1.8rem
+  }
+
+  /* Values grid: 1-col */
+  .values-grid {
+    grid-template-columns:1fr!important
+  }
+
+  /* Process grid: 1-col */
+  .process-grid {
+    grid-template-columns:1fr!important;
+    gap:.8rem
+  }
+
+  /* Contact page grid: 1-col */
+  .contact-page-grid {
+    grid-template-columns:1fr!important
+  }
+
+  /* Training list: 1-col */
+  .training-list {
+    grid-template-columns:1fr!important
+  }
+
+  /* Stats row: 3-col stays; fine at 580px */
+
+  /* Centered hero: tight padding */
+  .page-hero--centered {
+    padding:6.5rem 0 2.5rem
+  }
+  .page-hero-center-wrap h1 {
+    font-size:clamp(1.85rem,9.5vw,2.8rem)
+  }
+
+  /* Section spacing */
+  .section {
+    padding:clamp(3rem,10vw,5rem) 0
+  }
+
+  /* Founder photo fills container */
+  .founder-photo {
+    max-width:100%;
+    aspect-ratio:4/5
+  }
+
+  /* Contact tile: auto height */
+  .contact-tile {
+    min-height:auto
+  }
+
+  /* Process step: circle left, title+desc stacked right */
+  .process-step {
+    display:grid;
+    grid-template-columns:auto 1fr;
+    grid-template-rows:auto auto;
+    column-gap:1.1rem;
+    row-gap:.15rem;
+    align-items:start
+  }
+  .process-step > div {
+    grid-column:1;
+    grid-row:1 / span 2;
+    margin-bottom:0;
+    align-self:center
+  }
+  .process-step h3 {
+    grid-column:2;
+    grid-row:1;
+    margin-bottom:0;
+    align-self:end
+  }
+  .process-step p {
+    grid-column:2;
+    grid-row:2;
+    margin-top:.1rem
+  }
+
+  /* Vision card padding */
+  .vision-card {
+    padding:clamp(1.6rem,5vw,2.8rem)
+  }
+}
+
+
+/* ================================================================
+   PHONE — 480px
+   ================================================================ */
+@media (max-width:480px) {
+  /* Container: reduce side margins slightly for more content space */
+  .container {
+    width:min(100%,calc(100% - 2.4rem))
+  }
+
+  /* Nav brand name size */
+  .brand-copy strong {
+    font-size:1.15rem!important
+  }
+
+  /* Home hero */
+  .home-hero h1 {
+    font-size:clamp(2rem,11.5vw,3rem)!important
+  }
+  .page-hero p {
+    font-size:.97rem
+  }
+
+  /* Hero stats: compact but still 3-col */
+  .hero-stats {
+    gap:.55rem!important
+  }
+  .stat strong {
+    font-size:clamp(1.35rem,6.5vw,1.85rem)
+  }
+  .stat span {
+    font-size:.68rem;
+    letter-spacing:.08em
+  }
+
+  /* Stats row: 3-col gets tight at 480px; move to 1-col */
+  .stats-row {
+    grid-template-columns:1fr!important
+  }
+  .stats-row strong {
+    font-size:1.25rem
+  }
+
+  /* Centered hero */
+  .page-hero--centered {
+    padding:6.2rem 0 2.2rem
+  }
+  .page-hero-center-wrap h1 {
+    font-size:clamp(1.75rem,9vw,2.5rem)
+  }
+  .page-hero-center-wrap p {
+    font-size:.95rem
+  }
+
+  /* Section spacing */
+  .section {
+    padding:clamp(2.6rem,10vw,4rem) 0
+  }
+
+  /* Section h2 */
+  .section h2 {
+    font-size:clamp(1.65rem,7vw,2.8rem)
+  }
+
+  /* Lead text */
+  .lead {
+    font-size:clamp(1.05rem,3.5vw,1.25rem)
+  }
+
+  /* Vision card */
+  .vision-card {
+    padding:1.6rem
+  }
+  .vision-card h2 {
+    font-size:clamp(1.65rem,7vw,2.5rem)
+  }
+
+  /* Founder copy */
+  .founder-copy h2 {
+    font-size:clamp(1.75rem,6vw,2.8rem)
+  }
+  .founder-quote {
+    font-size:.97rem
+  }
+  .founder-points span {
+    padding:.42rem .72rem;
+    font-size:.82rem
+  }
+
+  /* Contact CTA band */
+  .contact-cta-band {
+    padding:1.6rem
+  }
+  .contact-cta-text h2 {
+    font-size:clamp(1.5rem,7vw,2rem)
+  }
+  .contact-cta-actions {
+    flex-direction:column;
+    align-items:stretch
+  }
+  .contact-cta-actions .btn {
+    width:100%;
+    text-align:center;
+    justify-content:center
+  }
+
+  /* Process step circle */
+  .process-step div {
+    width:58px;
+    height:58px;
+    font-size:1.1rem
+  }
+  .process-step h3 {
+    font-size:1.05rem
+  }
+
+  /* Training visual padding */
+  .training-visual {
+    padding:1.8rem 1.4rem
+  }
+
+  /* Value card padding */
+  .value {
+    padding:1.3rem
+  }
+
+  /* Info card / service pillar padding */
+  .info-card,
+  .service-pillar {
+    padding:1.3rem
+  }
+
+  /* Footer compact */
+  .footer {
+    padding:2.8rem 0 1.6rem
+  }
+  .footer-grid {
+    gap:1.5rem!important
+  }
+
+  /* Float WhatsApp */
+  .float-wa {
+    width:50px;
+    height:50px;
+    right:.9rem;
+    bottom:.9rem
+  }
+
+  /* Hero actions: full stretch */
+  .hero-actions .btn {
+    max-width:100%
+  }
+
+  /* Contact tile padding */
+  .contact-tile {
+    padding:1.3rem
+  }
+
+  /* Eyebrow */
+  .eyebrow::before {
+    width:24px
+  }
+}
+
+
+/* ================================================================
+   SMALL PHONE — 375px
+   ================================================================ */
+@media (max-width:375px) {
+  /* Container: tight side margins */
+  .container {
+    width:min(100%,calc(100% - 2rem))
+  }
+
+  /* Nav logo */
+  .nav .brand-mark {
+    width:40px;
+    height:40px
+  }
+  .brand-copy strong {
+    font-size:1.05rem!important
+  }
+
+  /* Home hero */
+  .home-hero h1 {
+    font-size:clamp(1.85rem,11vw,2.75rem)!important
+  }
+
+  /* Section h2 */
+  .section h2 {
+    font-size:clamp(1.55rem,7.5vw,2.4rem)
+  }
+
+  /* Hero stats: compact 3-col */
+  .stat strong {
+    font-size:clamp(1.2rem,7vw,1.6rem)
+  }
+  .stat span {
+    font-size:.65rem;
+    letter-spacing:.06em
+  }
+
+  /* Centered hero */
+  .page-hero-center-wrap h1 {
+    font-size:clamp(1.65rem,9.5vw,2.3rem)
+  }
+
+  /* Eyebrow: shorter decorative line */
+  .eyebrow::before {
+    width:18px
+  }
+  .eyebrow {
+    font-size:.7rem;
+    letter-spacing:.18em
+  }
+
+  /* Buttons: compact */
+  .btn {
+    padding:.78rem 1rem;
+    font-size:.9rem
+  }
+
+  /* Vision card */
+  .vision-card h2 {
+    font-size:clamp(1.55rem,7.5vw,2.2rem)
+  }
+
+  /* Founder quote text */
+  .founder-quote {
+    font-size:.94rem
+  }
+
+  /* Footer */
+  .footer-bottom {
+    font-size:.78rem
+  }
+
+  /* Float WA */
+  .float-wa {
+    width:46px;
+    height:46px
+  }
+
+  /* Section spacing */
+  .section {
+    padding:clamp(2.2rem,10vw,3.5rem) 0
+  }
+
+  /* Training list item text */
+  .training-list span {
+    font-size:.88rem
+  }
+}
+
+
+/* ================================================================
+   MINIMUM — 320px
+   Absolute smallest supported viewport
+   ================================================================ */
+@media (max-width:320px) {
+  /* Container */
+  .container {
+    width:min(100%,calc(100% - 1.6rem))
+  }
+
+  /* Nav */
+  .nav .brand-mark {
+    width:36px;
+    height:36px
+  }
+  .brand-copy strong {
+    font-size:.98rem!important
+  }
+
+  /* Typography: tightest clamp values */
+  .home-hero h1 {
+    font-size:clamp(1.7rem,11vw,2.4rem)!important
+  }
+  .section h2 {
+    font-size:clamp(1.45rem,8vw,2rem)
+  }
+  .page-hero-center-wrap h1 {
+    font-size:clamp(1.55rem,9.5vw,2rem)
+  }
+
+  /* Stat numbers */
+  .stat strong {
+    font-size:1.15rem
+  }
+
+  /* Card / pillar padding */
+  .service-pillar,
+  .info-card,
+  .contact-tile,
+  .value {
+    padding:1.1rem
+  }
+
+  /* Section */
+  .section {
+    padding:clamp(2rem,9vw,3rem) 0
+  }
+
+  /* Buttons */
+  .btn {
+    padding:.72rem .9rem;
+    font-size:.88rem
+  }
+
+  /* Founder points: allow wrap */
+  .founder-points {
+    gap:.4rem
+  }
+  .founder-points span {
+    font-size:.78rem;
+    padding:.35rem .6rem
+  }
+
+  /* Footer */
+  .footer {
+    padding:2.2rem 0 1.4rem
+  }
+
+  /* Float WA */
+  .float-wa {
+    width:44px;
+    height:44px;
+    right:.7rem;
+    bottom:.7rem
+  }
+}

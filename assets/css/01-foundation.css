@@ -258,7 +258,7 @@ main,.nav,.footer,.contact-band,.float-wa {
   margin:1.4rem 0;
   text-transform:none
 }
-.page-hero em,.section h2 em,.contact-card em {
+h1 em,h2 em,.contact-card em {
   font-style:normal;
   font-weight:800;
   background:linear-gradient(135deg,#F2D680,#D4AF37);
@@ -357,7 +357,7 @@ main,.nav,.footer,.contact-band,.float-wa {
   padding:clamp(4.5rem,9vw,8rem) 0
 }
 .section.tight {
-  padding-top:0
+  /* Equal to .section — inherits full responsive padding for consistent section gaps */
 }
 .split {
   display:grid;
@@ -549,6 +549,33 @@ p {
   border-top:1px solid var(--line);
   font-size:.84rem;
   color:var(--muted)
+}
+.footer-social {
+  display:flex;
+  gap:.55rem;
+  margin-top:1.1rem;
+  flex-wrap:wrap
+}
+.footer-social a {
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:8px;
+  border:1px solid var(--line-strong);
+  color:var(--muted);
+  padding:0!important;
+  transition:border-color .3s var(--ease),color .3s var(--ease),background .3s var(--ease)
+}
+.footer-social a:hover {
+  border-color:rgba(212,175,55,.35)!important;
+  color:var(--gold-bright)!important;
+  background:rgba(212,175,55,.07)
+}
+.footer-social svg {
+  width:15px;
+  height:15px
 }
 .float-wa {
   position:fixed;
