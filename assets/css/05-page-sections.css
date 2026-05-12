@@ -1,3 +1,12 @@
+/* ── Home page background (index.html only) ── */
+.page-home .bg-constellation {
+  background:
+    radial-gradient(ellipse 700px 750px at 95% 65%, rgba(14,55,180,.42), transparent 68%),
+    radial-gradient(ellipse 500px 400px at 85% 30%, rgba(10,35,120,.28), transparent 60%),
+    radial-gradient(ellipse 80% 100% at 0% 50%, rgba(14,26,60,.75), transparent 70%),
+    #0E1A35
+}
+
 /* Founder section */
 .founder-feature {
   display:grid;
@@ -102,6 +111,22 @@
   border-radius:50%;
   background:var(--gold)
 }
+/* Service pillar corner icon */
+.pillar-icon {
+  position:absolute;
+  top:1.25rem;
+  right:1.25rem;
+  width:26px;
+  height:26px;
+  color:rgba(255,255,255,.85);
+  pointer-events:none;
+  flex-shrink:0;
+  z-index:1;
+  transition:color .35s var(--ease)
+}
+.service-pillar:hover .pillar-icon {
+  color:rgba(212,175,55,.45)
+}
 /* Contact CTA band */
 .contact-cta-band {
   display:grid;
@@ -203,18 +228,18 @@
 }
 /* Centered hero layout (brand / bmc / tech / training pages) */
 .page-hero--centered {
-  text-align:center;
+  text-align:left;
   min-height:68vh
 }
 .page-hero--centered .container {
   position:relative;
   z-index:1;
   display:flex;
-  justify-content:center
+  justify-content:flex-start
 }
 .page-hero-center-wrap {
-  max-width:820px;
-  text-align:center
+  max-width:760px;
+  text-align:left
 }
 .page-hero-center-wrap h1 {
   font-size:clamp(2.6rem,6vw,5rem);
@@ -222,8 +247,13 @@
 }
 .page-hero-center-wrap p {
   max-width:660px;
-  margin-inline:auto;
+  margin-inline:0;
   margin-top:1.1rem
+}
+.page-hero--centered .page-hero-center-wrap,
+.page-hero--centered .page-hero-center-wrap h1,
+.page-hero--centered .page-hero-center-wrap p {
+  text-align:left
 }
 .hero-bg-overlay {
   position:absolute;
@@ -231,7 +261,7 @@
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  opacity:.1;
+  opacity:.6;
   z-index:0;
   pointer-events:none
 }
@@ -279,84 +309,145 @@
 }
 
 /* ================================================================
-   ABOUT PAGE â€” Diagonal split hero
-   Text: same .container structure as clients page (identical positioning)
-   Right: gold column with steep diagonal + matching image border
+   ABOUT AND SERVICES banner heroes
    ================================================================ */
-
-/* Section: just needs overflow hidden */
+.about-page-hero,
+.services-page-hero {
+  overflow:hidden;
+  isolation:isolate;
+  background-image:
+    linear-gradient(90deg,rgba(8,18,42,.92) 0%,rgba(8,18,42,.78) 42%,rgba(8,18,42,.44) 100%),
+    linear-gradient(180deg,rgba(8,18,42,.24),rgba(8,18,42,.64)),
+    var(--hero-banner-image);
+  background-repeat:no-repeat,no-repeat,no-repeat;
+  background-size:100% 100%,100% 100%,cover;
+  background-position:center center,center center,var(--hero-image-position,center center);
+}
 .about-page-hero {
-  overflow:hidden
+  --hero-banner-image:url("../images/pages/about-us_img.png");
+  --hero-image-position:center center
+}
+.services-page-hero {
+  --hero-banner-image:url("../images/pages/services_img.png");
+  --hero-image-position:center center
+}
+.about-page-hero::after,
+.services-page-hero::after {
+  display:none
+}
+.about-page-hero .page-hero-grid,
+.services-page-hero .page-hero-grid {
+  grid-template-columns:minmax(0,760px)!important;
+  align-items:center!important
+}
+.about-page-hero .page-hero-grid > .reveal,
+.services-page-hero .page-hero-grid > .reveal {
+  max-width:760px
+}
+.about-page-hero p,
+.services-page-hero p {
+  color:rgba(244,247,251,.9)
+}
+.about-page-hero > .hero-bg-overlay,
+.services-page-hero > .hero-bg-overlay {
+  display:none
+}
+.about-page-hero .page-hero-grid::before,
+.services-page-hero .page-hero-grid::before {
+  content:none
 }
 
-/* Grid: equal halves, text at TOP (not centred) â€” matches clients page */
-.about-page-hero .page-hero-grid {
-  grid-template-columns:1fr 1fr!important;
-  align-items:start!important
-}
-
-/* RIGHT column â€” BrillBrains gold, steep 60° diagonal on left edge, full-bleed to viewport right */
-.about-photo-col {
-  background:#D4AF37;
-  clip-path:polygon(30% 0%,100% 0%,100% 100%,0% 100%);
-  align-self:stretch;
-  display:flex;
-  padding:1.5rem calc((100vw - min(1200px,92vw))/2 + 1.5rem) 1.5rem 5.5rem;
-  margin-right:calc((min(1200px,92vw) - 100vw)/2)
-}
-
-/* Image â€” diagonal LEFT border (matches column slope), STRAIGHT right border */
-.about-photo-col img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  clip-path:polygon(22% 0%,100% 0%,100% 100%,0% 100%);
-  filter:brightness(.88) saturate(.8) contrast(1.06)
-}
-
-/* â”€â”€ Tablet â‰¤ 1080px: stack, gold diagonal rotates to top edge â”€â”€ */
 @media(max-width:1080px) {
-  .about-page-hero .page-hero-grid {
-    grid-template-columns:1fr!important
-  }
-  .about-photo-col {
-    clip-path:polygon(0% 18%,100% 0%,100% 100%,0% 100%);
-    padding:3rem 1.5rem 1.5rem;
-    min-height:50vw
-  }
-  .about-photo-col img {
-    height:48vw;
-    clip-path:polygon(0% 10%,100% 0%,100% 100%,0% 100%)
+  .about-page-hero,
+  .services-page-hero {
+    background-size:100% 100%,100% 100%,cover;
+    background-position:center center,center center,var(--hero-image-position,center center)
   }
 }
 
-/* â”€â”€ Mobile â‰¤ 760px â”€â”€ */
 @media(max-width:760px) {
-  .about-photo-col {
-    clip-path:polygon(0% 14%,100% 0%,100% 100%,0% 100%);
-    padding:2.5rem 1rem 1rem;
-    min-height:60vw
+  .about-page-hero,
+  .services-page-hero,
+  .page-hero--centered {
+    flex-direction:column;
+    align-items:stretch!important;
+    justify-content:flex-start
   }
-  .about-photo-col img {
-    height:58vw;
-    clip-path:polygon(0% 8%,100% 0%,100% 100%,0% 100%)
+  .about-page-hero > .container,
+  .services-page-hero > .container,
+  .page-hero--centered > .container,
+  .page-hero:not(.home-hero) > .container {
+    width:min(100%,calc(100% - 3.2rem));
+    margin-inline:auto;
+    position:relative;
+    z-index:1
+  }
+  .about-page-hero,
+  .services-page-hero {
+    background-image:
+      linear-gradient(180deg,rgba(8,18,42,.95) 0%,rgba(8,18,42,.86) 100%),
+      linear-gradient(90deg,rgba(8,18,42,.18),rgba(8,18,42,.26));
+    background-size:100% 100%,100% 100%;
+    background-position:center center,center center
+  }
+  .about-page-hero .page-hero-grid,
+  .services-page-hero .page-hero-grid {
+    gap:1.6rem!important;
+    align-items:start!important
+  }
+  .about-page-hero > .hero-bg-overlay,
+  .services-page-hero > .hero-bg-overlay,
+  .page-hero--centered > .hero-bg-overlay {
+    display:block;
+    position:relative;
+    inset:auto;
+    width:100vw;
+    max-width:100vw;
+    height:clamp(250px,58vw,390px);
+    margin:clamp(-7.1rem,-15vw,-5.8rem) 0 clamp(-.4rem,-1vw,0rem) 50%;
+    transform:translateX(-50%);
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    opacity:.6;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden
+  }
+  .about-page-hero > .hero-bg-overlay::after,
+  .services-page-hero > .hero-bg-overlay::after,
+  .page-hero--centered > .hero-bg-overlay::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(8,18,42,0) 58%,rgba(8,18,42,.96) 100%)
+  }
+  .page-hero--centered .container {
+    display:flex;
+    justify-content:flex-start
+  }
+  .page-hero--centered .page-hero-center-wrap {
+    text-align:left;
+    margin-inline:0
+  }
+  .page-hero--centered .page-hero-center-wrap p {
+    margin-inline:0
   }
 }
 
-/* â”€â”€ Small phone â‰¤ 480px â”€â”€ */
 @media(max-width:480px) {
-  .about-photo-col {
-    clip-path:polygon(0% 10%,100% 0%,100% 100%,0% 100%);
-    min-height:68vw
+  .about-page-hero .page-hero-grid,
+  .services-page-hero .page-hero-grid {
+    gap:1.15rem!important
   }
-  .about-photo-col img {
-    height:66vw;
-    clip-path:polygon(0% 6%,100% 0%,100% 100%,0% 100%)
+  .about-page-hero > .hero-bg-overlay,
+  .services-page-hero > .hero-bg-overlay,
+  .page-hero--centered > .hero-bg-overlay {
+    height:clamp(235px,64vw,310px);
+    margin-top:clamp(-2.8rem,-7vw,-1.5rem);
+    opacity:.6
   }
 }
-
-
 /* ================================================================
    STRATEGIC PARTNERSHIP SECTION
    ================================================================ */
@@ -432,7 +523,12 @@
   .partnership-card {
     grid-template-columns:1fr;
     grid-template-rows:auto auto auto;
-    max-width:360px
+    width:min(100%,360px);
+    max-width:360px;
+    margin-inline:auto;
+    justify-self:center;
+    justify-items:center;
+    text-align:center
   }
   .partnership-connector {
     flex-direction:row
@@ -693,7 +789,7 @@
   transition:max-height .4s var(--ease)
 }
 .faq-item.open .faq-answer {
-  max-height:400px
+  max-height:800px
 }
 .faq-answer-inner {
   padding:.2rem 0 1.6rem;
@@ -702,3 +798,4 @@
   line-height:1.75;
   max-width:780px
 }
+

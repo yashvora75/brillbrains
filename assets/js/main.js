@@ -1,6 +1,8 @@
 'use strict';
 
 (function () {
+  document.documentElement.classList.add('js-on');
+
   const nav = document.getElementById('nav');
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
@@ -20,15 +22,29 @@
 
     if (!menuToggle || !navLinks) return;
 
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
     const setMenuOpen = (open) => {
       navLinks.classList.toggle('open', open);
       menuToggle.classList.toggle('active', open);
       menuToggle.setAttribute('aria-expanded', String(open));
+      backdrop.classList.toggle('active', open);
       document.body.style.overflow = open ? 'hidden' : '';
     };
 
     menuToggle.addEventListener('click', () => {
       setMenuOpen(!navLinks.classList.contains('open'));
+    });
+
+    backdrop.addEventListener('click', () => setMenuOpen(false));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        setMenuOpen(false);
+        menuToggle.focus();
+      }
     });
 
     navLinks.querySelectorAll('a').forEach((link) => {
