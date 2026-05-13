@@ -147,6 +147,36 @@ main,.nav,.footer,.contact-band,.float-wa {
 .nav-dropdown {
   position:relative
 }
+.nav-dropdown-head {
+  display:flex;
+  align-items:center;
+  gap:.35rem
+}
+.nav-dropdown-toggle {
+  display:none;
+  place-items:center;
+  width:1.55rem;
+  height:1.55rem;
+  border-radius:999px;
+  color:rgba(244,239,226,.86);
+  transition:color .25s var(--ease),background .25s var(--ease)
+}
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle {
+  color:var(--gold-bright);
+  background:rgba(212,175,55,.1)
+}
+.nav-dropdown-toggle span {
+  width:.42rem;
+  height:.42rem;
+  border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;
+  transform:translateY(-.12rem) rotate(45deg);
+  transition:transform .25s var(--ease)
+}
+.nav-dropdown.open .nav-dropdown-toggle span {
+  transform:translateY(.12rem) rotate(225deg)
+}
 .dropdown-panel {
   position:absolute;
   right:0;
@@ -171,7 +201,7 @@ main,.nav,.footer,.contact-band,.float-wa {
 .dropdown-panel a:hover {
   background:rgba(212,175,55,.08)
 }
-.nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel {
+.nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel,.nav-dropdown.open .dropdown-panel {
   opacity:1;
   visibility:visible;
   transform:translateY(0)
@@ -349,21 +379,46 @@ h1 em,h2 em,.contact-card em {
 }
 .marquee {
   overflow:hidden;
-  border-block:1px solid var(--line);
-  background:rgba(8,18,42,.46)
+  border-block:0;
+  background:rgba(8,18,42,.46);
+  contain:paint;
+  line-height:0;
+  max-width:100vw
 }
-.marquee div {
+.marquee-track {
   display:flex;
-  gap:3rem;
+  align-items:stretch;
+  gap:0;
   width:max-content;
-  padding:1.1rem 0;
-  animation:marquee 30s linear infinite
+  padding:0;
+  animation:marquee 34s linear infinite;
+  will-change:transform;
+  transform:translate3d(0,0,0)
 }
-.marquee span {
+.marquee-item {
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
   font-family:var(--font-display);
-  font-size:1.3rem;
+  font-size:clamp(1rem,1.6vw,1.28rem);
+  line-height:1;
+  white-space:nowrap;
+  min-height:52px;
+  padding:0 1.35rem;
+  border-radius:0;
+  border:0;
+  box-shadow:none
+}
+.marquee-item::before {
+  content:none
+}
+.marquee-item--gold {
   color:var(--gold-bright);
-  white-space:nowrap
+  background:rgba(8,18,42,.72)
+}
+.marquee-item--light {
+  color:var(--navy-deep);
+  background:#fff
 }
 .section {
   padding:clamp(4.5rem,9vw,8rem) 0
@@ -395,25 +450,39 @@ p {
 }
 .stats-row {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1rem;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.8rem;
   border-top:1px solid var(--line);
   margin-top:2rem;
   padding-top:1.4rem
 }
 .stats-row strong {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:112px;
+  padding:1rem .85rem;
+  border:1px solid rgba(216,183,91,.22);
+  border-radius:8px;
+  background:rgba(255,255,255,.035);
   font-family:var(--font-display);
-  font-size:1.45rem;
+  font-size:clamp(1.25rem,1.8vw,1.65rem);
+  line-height:1.18;
+  text-align:center;
   color:var(--gold-bright)
 }
-.stats-row span {
+.stats-value {
+  display:block
+}
+.stats-label {
   display:block;
   font-family:var(--font-body);
-  font-size:.72rem;
-  letter-spacing:.16em;
+  font-size:.7rem;
+  line-height:1.25;
+  letter-spacing:.13em;
   text-transform:uppercase;
   color:var(--muted);
-  margin-top:.15rem
+  margin-top:.5rem
 }
 .section-head {
   max-width:760px;
@@ -661,7 +730,7 @@ p {
 }
 @keyframes marquee {
   to {
-    transform:translateX(-50%)
+    transform:translate3d(-50%,0,0)
   }
 }
 @media (prefers-reduced-motion:reduce) {
@@ -708,28 +777,48 @@ p {
   }
   .nav-links {
     position:fixed;
-    top:0;
-    right:-100%;
-    width:min(86vw,360px);
+    inset:0;
+    width:100vw;
     height:100vh;
-    height:100svh;
+    height:100dvh;
     z-index:21;
     display:flex;
     flex-direction:column;
     align-items:flex-start;
-    justify-content:center;
-    gap:1.1rem;
-    padding:2rem;
+    justify-content:flex-start;
+    gap:1rem;
+    overflow-y:auto;
+    padding:clamp(6rem,18vh,8rem) clamp(2rem,8vw,4rem) 2rem;
     background:rgba(8,18,42,.98);
-    border-left:1px solid var(--line);
-    transition:right .35s var(--ease)
+    border-left:0;
+    opacity:0;
+    pointer-events:none;
+    transform:translateX(100%);
+    transition:transform .35s var(--ease),opacity .35s var(--ease)
   }
   .nav-links.open {
-    right:0
+    opacity:1;
+    pointer-events:auto;
+    transform:translateX(0)
   }
   .nav-links a {
     font-family:var(--font-display);
     font-size:1.45rem
+  }
+  .nav-dropdown {
+    width:min(100%,420px)
+  }
+  .nav-dropdown-head {
+    width:100%;
+    justify-content:space-between;
+    gap:1rem
+  }
+  .nav-dropdown-toggle {
+    display:inline-grid;
+    width:2.5rem;
+    height:2.5rem;
+    border:1px solid rgba(212,175,55,.28);
+    color:var(--cream)
   }
   .nav-cta {
     font-family:var(--font-body)!important;
@@ -737,14 +826,31 @@ p {
   }
   .dropdown-panel {
     position:static;
-    opacity:1;
-    visibility:visible;
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    visibility:hidden;
     transform:none;
     box-shadow:none;
     background:transparent;
     border:0;
-    padding:.4rem 0 0 .8rem;
-    min-width:0
+    padding:0 0 0 1rem;
+    min-width:0;
+    transition:max-height .3s var(--ease),opacity .25s var(--ease),padding .25s var(--ease)
+  }
+  .nav-dropdown:hover .dropdown-panel,
+  .nav-dropdown:focus-within .dropdown-panel {
+    max-height:0;
+    opacity:0;
+    visibility:hidden;
+    transform:none;
+    padding:0 0 0 1rem
+  }
+  .nav-dropdown.open .dropdown-panel {
+    max-height:18rem;
+    opacity:1;
+    visibility:visible;
+    padding:.45rem 0 .15rem 1rem
   }
   .dropdown-panel a {
     font-family:var(--font-body);
@@ -770,8 +876,15 @@ p {
     width:50px;
     height:50px
   }
-  .marquee span {
-    font-size:1.05rem
+  .marquee-track {
+    align-items:stretch;
+    gap:0;
+    padding:0;
+    animation-duration:28s
+  }
+  .marquee-item {
+    font-size:.98rem;
+    min-height:46px;
+    padding:0 1rem
   }
 }
-

@@ -193,6 +193,25 @@
     gap:clamp(1rem,2.5vw,2rem)
   }
 
+  .stats-row {
+    grid-template-columns:1fr!important;
+    gap:.75rem
+  }
+  .stats-row strong {
+    min-height:auto;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:.9rem 1rem;
+    text-align:left
+  }
+  .stats-label {
+    flex:0 0 auto;
+    margin-top:0;
+    text-align:right
+  }
+
   /* Values grid: 2-col already handled in 03, ensure ok */
 
   /* Footer: 2-col already in 01-foundation */
@@ -312,6 +331,16 @@
   .stats-row {
     grid-template-columns:repeat(3,1fr)!important
   }
+  .stats-row strong {
+    flex-direction:column;
+    justify-content:center;
+    min-height:104px;
+    text-align:center
+  }
+  .stats-label {
+    margin-top:.45rem;
+    text-align:center
+  }
 
   /* Service-pillar and card grids: restore 2-col at 760px
      (01-foundation sets them to 1-col; we override to 2-col
@@ -397,8 +426,14 @@
   }
 
   /* Marquee size */
-  .marquee span {
-    font-size:1.05rem
+  .marquee-track {
+    gap:0;
+    padding:0
+  }
+  .marquee-item {
+    font-size:.98rem;
+    min-height:46px;
+    padding:0 1rem
   }
 }
 

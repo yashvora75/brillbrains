@@ -26,16 +26,39 @@
     backdrop.className = 'nav-backdrop';
     document.body.appendChild(backdrop);
 
+    const serviceDropdowns = navLinks.querySelectorAll('.nav-dropdown');
+
+    const closeServiceDropdowns = () => {
+      serviceDropdowns.forEach((dropdown) => {
+        dropdown.classList.remove('open');
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    };
+
     const setMenuOpen = (open) => {
       navLinks.classList.toggle('open', open);
       menuToggle.classList.toggle('active', open);
       menuToggle.setAttribute('aria-expanded', String(open));
       backdrop.classList.toggle('active', open);
       document.body.style.overflow = open ? 'hidden' : '';
+      if (!open) closeServiceDropdowns();
     };
 
     menuToggle.addEventListener('click', () => {
       setMenuOpen(!navLinks.classList.contains('open'));
+    });
+
+    serviceDropdowns.forEach((dropdown) => {
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      if (!toggle) return;
+
+      toggle.addEventListener('click', () => {
+        const nextOpen = !dropdown.classList.contains('open');
+        closeServiceDropdowns();
+        dropdown.classList.toggle('open', nextOpen);
+        toggle.setAttribute('aria-expanded', String(nextOpen));
+      });
     });
 
     backdrop.addEventListener('click', () => setMenuOpen(false));

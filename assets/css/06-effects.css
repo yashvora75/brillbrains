@@ -924,6 +924,22 @@
 .footer-brand .brand-wordmark {
   width:clamp(100px,7.8vw,125px)!important
 }
+.brand-tagline-img {
+  display:block;
+  width:clamp(189px,15.6vw,243px);
+  height:auto;
+  margin-top:.04rem;
+  margin-left:0;
+  object-fit:contain;
+  object-position:left center;
+  transform:translateX(-9.5%)
+}
+.nav .brand-tagline-img {
+  transform:translateX(-10.5%)
+}
+.footer-brand .brand-tagline-img {
+  width:clamp(177px,14.1vw,225px)
+}
 .nav-links a:not(.nav-cta) {
   color:rgba(255,255,255,.96)!important
 }
@@ -943,9 +959,15 @@
   .brand-wordmark {
     width:clamp(88px,23.8vw,109px)!important
   }
+  .brand-tagline-img {
+    width:clamp(159px,43.5vw,204px)
+  }
 }
 @media (max-width:420px) {
   .brand-wordmark {
     width:clamp(78px,26.6vw,97px)!important
+  }
+  .brand-tagline-img {
+    width:clamp(141px,48vw,183px)
   }
 }
