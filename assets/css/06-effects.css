@@ -470,6 +470,24 @@
     transition:none!important
   }
 }
+/* Home hero orbit visual scale */
+.home-hero .hero-visual {
+  transform:scale(.88)!important;
+  transform-origin:center center!important
+}
+
+
+@media (max-width:760px) {
+  .home-hero .hero-visual {
+    transform:scale(1.05)!important
+  }
+}
+@media (max-width:520px) {
+  .home-hero .hero-visual {
+    transform:scale(1.12)!important
+  }
+}
+
 /* =================================================================
    TRUE ORBITING HERO STATS
    Three dots travel on the rings with readable stat cards attached.

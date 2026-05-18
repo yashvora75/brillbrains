@@ -324,11 +324,11 @@
   background-position:center center,center center,var(--hero-image-position,center center);
 }
 .about-page-hero {
-  --hero-banner-image:url("../images/pages/about-us_img.png");
+  --hero-banner-image:url("../images/pages/about-us_img.webp");
   --hero-image-position:center center
 }
 .services-page-hero {
-  --hero-banner-image:url("../images/pages/services_img.png");
+  --hero-banner-image:url("../images/pages/services_img.webp");
   --hero-image-position:center center
 }
 .about-page-hero::after,
